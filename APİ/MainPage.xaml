@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APİ.MainPage"
+              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             >
+
+
+  <StackLayout BackgroundColor="#D4E7C5" >
+      
+        <skia:SKLottieView
+                   x:Name="animasyon"
+                  IsVisible="false"
+                  Source="anim.json"
+                  RepeatCount="-1"
+                  HeightRequest="20"
+                  WidthRequest="20"
+                  HorizontalOptions="Center" />
+
+      <ListView x:Name="Urunler"  ItemsSource="{Binding Products}" ItemSelected="OnItemSelected" HasUnevenRows="True">
+          <ListView.ItemTemplate >
+              <DataTemplate>
+              
+                  <ViewCell>
+                      <StackLayout Orientation="Horizontal" >
+                          <Image Source="{Binding image}" WidthRequest="50" HeightRequest="50"></Image>
+                          <StackLayout HorizontalOptions="FillAndExpand">
+                              <Label Text="{Binding title}" FontAttributes="Bold" MaxLines="1"></Label>
+                               <Label Text="{Binding Description}" MaxLines="2" LineBreakMode="TailTruncation" ></Label>
+                                
+                          </StackLayout>
+                          <Button Text="SİL" BackgroundColor="Red" Clicked="onDeleteClicked"> </Button>
+                          <Button Text="GÜNCELLE" BackgroundColor="Orange"> </Button>
+                      </StackLayout>
+
+                  </ViewCell>
+                     
+                  
+                  
+                 
+              </DataTemplate>
+           </ListView.ItemTemplate>
+
+
+      </ListView>
+      
+      
+  </StackLayout>
+
+    
+</ContentPage>
+

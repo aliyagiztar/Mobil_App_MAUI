@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="APİ.DetailPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="DetailPage">
+    <VerticalStackLayout>
+
+        <skia:SKLottieView
+                   x:Name="animasyon"
+                  IsVisible="true"
+                  Source="anim.json"
+                  RepeatCount="-1"
+                  HeightRequest="20"
+                  WidthRequest="20"
+                  HorizontalOptions="Center" />
+
+
+        <Label 
+            x:Name="label"
+            Text="{Binding Description}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="label2"
+            Text="{Binding id}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+       
+    </VerticalStackLayout>
+</ContentPage>
+
+
